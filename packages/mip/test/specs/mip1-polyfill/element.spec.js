@@ -356,11 +356,21 @@ describe('mip1 element', function () {
     let node = createDomByTag(name)
     node.setAttribute('name', 'MIP')
 
+<<<<<<< HEAD
     return extensions.waitForExtension(name).then(async function () {
       document.body.removeChild(node)
       await sleep(100)
       expect(queue).to.deep.equal(['createdCallback', 'attachedCallback', 'build', 'detachedCallback'])
     })
+=======
+    return extensions.waitForExtension(name)
+      .then(function () {
+        document.body.removeChild(node)
+      })
+      .then(function () {
+        expect(queue).to.deep.equal(['createdCallback', 'attachedCallback', 'build', 'detachedCallback'])
+      })
+>>>>>>> origin/dev-vue-registry
   })
 })
 
